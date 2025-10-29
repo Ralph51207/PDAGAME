@@ -3,19 +3,21 @@ extends Area2D
 @export var sprite: Sprite2D
 var is_open := false
 
-func _ready():
-	close()
+func _ready() -> void:
+	close_portal()
 
-func open():
+func open_portal() -> void:
 	is_open = true
 	if sprite and sprite.region_enabled:
-		sprite.region_rect.position.x = 64  # adjust offset depending on your texture
-	print("🚪 Portal opened visually!")
+		sprite.region_rect = Rect2(Vector2(64, 0), Vector2(64, 64))
+		sprite.queue_redraw()
+	print("🚪 Portal opened!")
 
-func close():
+func close_portal() -> void:
 	is_open = false
 	if sprite and sprite.region_enabled:
-		sprite.region_rect.position.x = 0
+		sprite.region_rect = Rect2(Vector2(0, 0), Vector2(64, 64))
+		sprite.queue_redraw()
 	print("🚪 Portal closed!")
 
 func _on_body_entered(body: Node2D) -> void:

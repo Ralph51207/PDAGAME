@@ -1,46 +1,35 @@
 [gd_scene load_steps=6 format=3 uid="uid://clbwn8c67e30h"]
 
 [ext_resource type="Script" uid="uid://bw3gmtre2ex4s" path="res://SCRIPTS/hud.gd" id="1_87uan"]
-[ext_resource type="Texture2D" uid="uid://d35l5yxbp7dc6" path="res://ASSETS/A.png" id="1_l7brr"]
-[ext_resource type="LabelSettings" uid="uid://k50yc5c5ece5" path="res://ASSETS/UI Settings/hud.tres" id="2_undyj"]
+[ext_resource type="PackedScene" uid="uid://cm1mp7yf5535t" path="res://SCENES/coin_icon.tscn" id="2_2xvbx"]
 [ext_resource type="FontFile" uid="uid://dubt1jymhq6fq" path="res://ASSETS/VCR_OSD_MONO_1.001.ttf" id="3_kyhng"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_wmfkl"]
+[sub_resource type="LabelSettings" id="LabelSettings_undyj"]
 font = ExtResource("3_kyhng")
-font_size = 32
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("coin_label", "portal_label") groups=["hud"]]
+[sub_resource type="LabelSettings" id="LabelSettings_kyhng"]
+font = ExtResource("3_kyhng")
+
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("coin_container", "coin_label", "portal_label") groups=["Hud"]]
 script = ExtResource("1_87uan")
-coin_label = NodePath("CoinTexture/CoinLabel")
-portal_label = NodePath("PortalLabel")
+coin_container = NodePath("coin_container")
+coin_icon_scene = ExtResource("2_2xvbx")
+coin_label = NodePath("coin_label")
+portal_label = NodePath("portal_label")
 
-[node name="CoinTexture" type="TextureRect" parent="."]
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 112.0
-offset_bottom = 120.0
-texture = ExtResource("1_l7brr")
-stretch_mode = 4
+[node name="coin_container" type="VBoxContainer" parent="."]
+offset_top = -320.0
+offset_right = 64.0
+offset_bottom = 328.0
+alignment = 2
 
-[node name="CoinLabel" type="Label" parent="CoinTexture"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 72.0
-offset_top = -16.0
-offset_right = 147.0
-offset_bottom = 16.0
-grow_vertical = 2
-text = "x 00"
-label_settings = ExtResource("2_undyj")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="coin_label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_undyj")
 
-[node name="PortalLabel" type="Label" parent="."]
-offset_left = 24.0
+[node name="portal_label" type="Label" parent="."]
 offset_top = 24.0
-offset_right = 174.0
-offset_bottom = 81.0
-text = "Portal Closed"
-label_settings = SubResource("LabelSettings_wmfkl")
+offset_right = 40.0
+offset_bottom = 47.0
+label_settings = SubResource("LabelSettings_kyhng")

@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://c8rup2d00o1wa"]
+[gd_scene load_steps=11 format=4 uid="uid://c8rup2d00o1wa"]
 
 [ext_resource type="PackedScene" uid="uid://byw1a7gpe7aud" path="res://SCENES/player.tscn" id="2_jklmv"]
 [ext_resource type="Texture2D" uid="uid://6i6pxahat7kg" path="res://ASSETS/tiles_1.png" id="2_wp32v"]
 [ext_resource type="PackedScene" uid="uid://c5df2v3sw4iia" path="res://SCENES/Area Functionality/area_exit.tscn" id="3_2efqq"]
 [ext_resource type="PackedScene" uid="uid://cgfwo6lj8fgx7" path="res://SCENES/element.tscn" id="4_pfqw8"]
-[ext_resource type="PackedScene" uid="uid://clbwn8c67e30h" path="res://SCENES/hud.tscn" id="5_ciauo"]
 [ext_resource type="PackedScene" uid="uid://b1loigkcm7ysf" path="res://SCENES/pop_coin.tscn" id="6_kgpkt"]
 
 [sub_resource type="TileSet" id="TileSet_kgqqh"]
@@ -361,10 +360,6 @@ terrain_set_0/terrain_0/color = Color(5.583167e-06, 0.8681176, 0.84738076, 1)
 sources/0 = SubResource("TileSetAtlasSource_jklmv")
 
 [node name="AreaTemplate" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("5_ciauo")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-8, -16)
