@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://c8rup2d00o1wa"]
+[gd_scene load_steps=12 format=4 uid="uid://c8rup2d00o1wa"]
 
+[ext_resource type="PackedScene" uid="uid://cii1asg7o6lwx" path="res://SCENES/path_2d.tscn" id="1_kgpkt"]
 [ext_resource type="PackedScene" uid="uid://byw1a7gpe7aud" path="res://SCENES/player.tscn" id="2_jklmv"]
 [ext_resource type="Texture2D" uid="uid://6i6pxahat7kg" path="res://ASSETS/tiles_1.png" id="2_wp32v"]
 [ext_resource type="PackedScene" uid="uid://c5df2v3sw4iia" path="res://SCENES/Area Functionality/area_exit.tscn" id="3_2efqq"]
@@ -405,3 +406,11 @@ position = Vector2(-48, -112)
 
 [node name="PopCoin3" parent="." instance=ExtResource("6_kgpkt")]
 position = Vector2(-88, -152)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Path2D" parent="." instance=ExtResource("1_kgpkt")]
+position = Vector2(136, -192)
+
+[node name="Path2D2" parent="." instance=ExtResource("1_kgpkt")]
+position = Vector2(176, -192)

@@ -6,9 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_vjwtd"]
 radius = 25.70992
 
-[node name="AreaExit" type="Area2D" groups=["area_exits"]]
+[node name="AreaExit" type="Area2D" node_paths=PackedStringArray("sprite") groups=["area_exits"]]
 collision_layer = 65536
 script = ExtResource("1_vjwtd")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["area_exits"]]
 z_index = -10
