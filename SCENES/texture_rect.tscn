@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://qo215apb4o40"]
+
+[ext_resource type="Texture2D" uid="uid://d35l5yxbp7dc6" path="res://ASSETS/A.png" id="1_xgwpa"]
+[ext_resource type="Script" uid="uid://b7dywyqcod8ij" path="res://SCRIPTS/coin_icon.gd" id="2_jvkis"]
+
+[node name="coin_icon_scene" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_xgwpa")
+stretch_mode = 5
+script = ExtResource("2_jvkis")
